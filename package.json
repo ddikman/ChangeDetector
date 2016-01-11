@@ -2,7 +2,7 @@
   "name": "ChangeDetector",
   "version": "1.0.0",
   "description": "Polls a website for content changes.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha"
   },

@@ -1,7 +1,7 @@
-var Detector = require('detector');
-var Retriever = require('retriever');
-var Notifier = requrie('notifier');
-var Settings = require('settings');
+var Detector = require('./detector.js');
+var Retriever = require('./retriever.js');
+var Notifier = require('./notifier.js');
+var Settings = require('./settings.js');
 
 var settings = new Settings();
 var detector = new Detector();
@@ -23,4 +23,4 @@ var engine = function() {
 
 };
 
-module.export = engine;
+module.exports = engine;
