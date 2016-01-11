@@ -1,5 +1,4 @@
-var detector = function(){
-
+var detector = function() {
 };
 
 module.export = detector;
