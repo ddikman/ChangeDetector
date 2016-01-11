@@ -17,10 +17,8 @@ var engine = function() {
     var currentState = retriever.getState();
     var changes = detector.diffState(state, currentState);
 
-    changes.forEach(function(change) {
-      notifier.notify(change);
-      state.update(change.state);
-    });
+    changes.forEach(notifier.notify);
+    state = currentState;
   };
 
 };
