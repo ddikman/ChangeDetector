@@ -1,6 +1,6 @@
 var CronJob = require('cron').CronJob;
 var Engine = require('./engine.js');
-var Engine = require('./settings.js');
+var Settings = require('./settings.js');
 
 var settings = new Settings();
 settings.load('settings.yml');
