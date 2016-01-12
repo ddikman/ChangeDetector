@@ -12,8 +12,8 @@ var notifier = function(targetEmail, transport) {
       from: targetEmail,
       to: targetEmail,
       subject: 'Something has changed at ' + change.name,
-      text: "It seems that " + change.name + " has changed from \r\n"
-        + change.old + "\r\n\r\nTo:\r\n" + change.new
+      text: "It seems that " + change.name + " has changed from \r\n" +
+        change.old + "\r\n\r\nTo:\r\n" + change.new
     };
 
     this.transporter.sendMail(mailOptions, function(error, info){
