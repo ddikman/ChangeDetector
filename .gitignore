@@ -2,6 +2,9 @@
 logs
 *.log
 
+# Server settings
+settings.yml
+
 # Runtime data
 pids
 *.pid

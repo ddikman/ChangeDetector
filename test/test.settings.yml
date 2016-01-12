@@ -1,0 +1,9 @@
+settings:
+ email: changedetection@mailinator.com
+ interval: '*/10 * * * * *'
+ transport:
+   direct: true
+sites:
+ - name: Name generator test
+   url: http://www.rinkworks.com/namegen/fnames.cgi?d=1&f=0
+   examine: '.fnames_results'

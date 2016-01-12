@@ -27,7 +27,7 @@ describe('Retriever', function() {
     expect(state[0].contents).to.equal('contents');
   });
 
-  it('can retrieve url', function() {
+  it('can retrieve url @online', function() {
     var state = this.retriever.getState();
     expect(state.length).to.equal(1);
     expect(state[0].name).to.equal('google');

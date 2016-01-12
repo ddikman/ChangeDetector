@@ -4,7 +4,10 @@
   "description": "Polls a website for content changes.",
   "main": "server.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --grep @ --invert",
+    "test-email": "mocha --grep @email --slow 500",
+    "test-online": "mocha --grep @online --slow 1000",
+    "test-all": "mocha --slow 1000"
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,7 @@
     "cheerio": "^0.19.0",
     "cron": "^1.0.9",
     "js-yaml": "^3.5.2",
+    "nodemailer": "^2.0.0",
     "sync-request": "^2.2.0"
   },
   "devDependencies": {

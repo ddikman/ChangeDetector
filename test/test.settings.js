@@ -10,8 +10,9 @@ describe('Settings', function() {
   });
 
   it('loads settings yaml', function() {
-    this.settings.load('settings.yml');
-    expect(this.settings.email).to.equal('ddikman@gmail.com');
+    this.settings.load('test/test.settings.yml');
+    expect(this.settings.email).to.equal('changedetection@mailinator.com');
+    expect(this.settings.transport).to.equal('direct:?name=localhost');
     expect(this.settings.sites.length).to.be.above(0);
   });
 

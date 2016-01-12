@@ -1,15 +1,13 @@
 var Detector = require('./detector.js');
 var Retriever = require('./retriever.js');
 var Notifier = require('./notifier.js');
-var Settings = require('./settings.js');
 
-var settings = new Settings();
 var detector = new Detector();
 var retriever = new Retriever(settings.sites);
-var notifier = new Notifier();
+var notifier = new Notifier(settings.email, settings.transport);
 var state = [];
 
-var engine = function() {
+var engine = function(settings) {
 
   state = retriever.getState();
 
@@ -17,7 +15,7 @@ var engine = function() {
     var currentState = retriever.getState();
     var changes = detector.diffState(state, currentState);
 
-    changes.forEach(notifier.notify);
+    changes.forEach(notifier.notify, notifier);
     state = currentState;
   };
 
