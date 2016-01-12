@@ -27,7 +27,10 @@ var detector = function() {
 
       var change = this.tryGetChange(state, correspondingNew);
       if(change !== null)
+      {
+        console.log('detected change for: ' + change.name);
         changes.push(change);
+      }
 
     }, this);
 
