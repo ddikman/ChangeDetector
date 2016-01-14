@@ -6,6 +6,7 @@ var detector = function() {
 
       return {
         name: oldState.name,
+        url: newState.url,
         old: oldState.contents,
         new: newState.contents,
       };

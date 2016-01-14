@@ -26,6 +26,7 @@ var retriever = function(sites) {
     return {
       name: site.name,
       contents: innerText,
+      url: site.url
     };
   };
 
