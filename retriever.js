@@ -17,12 +17,20 @@ var retriever = function(sites) {
   };
 
   this.examineSite = function(site) {
-    console.log('getting state for ' + site.name + ' from: ' + site.url);
-    var html = this.getSite(site.url);
-    var dom = cheerio.load(html);
-    var element = dom(site.examine);
-    var innerText = element.text();
-    console.log('detected state for %s', site.name);
+    var innerText = '';
+    try {
+      console.log('getting state for ' + site.name + ' from: ' + site.url);
+      var html = this.getSite(site.url);
+      var dom = cheerio.load(html);
+      var element = dom(site.examine);
+      innerText = element.text();
+      console.log('detected state for %s', site.name);
+    }
+    catch(err){
+      innerText = err;
+      console.log('failed to detect state for %s: %s', site.name, err);
+    }
+
     return {
       name: site.name,
       contents: innerText,

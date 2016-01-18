@@ -12,7 +12,7 @@ var engine = new Engine(settings);
 
 console.log('starting cron job with interval: ' + settings.interval);
 var cron = cronCalc.createCron(settings.interval);
-var nextPoll = cronCalc.findNext(cron, new Date());
+var nextPoll = cronCalc.findFirst(cron, new Date());
 console.log('next poll will execute at ' + nextPoll);
 
 new CronJob(settings.interval, function() {
